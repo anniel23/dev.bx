@@ -1,12 +1,17 @@
 <?php
-function readFromConsole($question){
-	echo $question.': ';
-	$input = trim(fgets(STDIN));
-	if($input === '') {
+function readFromConsole($input=''){
+	if($input == ''){
+		$input = trim(fgets(STDIN));
+	}
+
+	if($input === '' || $input==='!stop') {
 		$input = NULL;
 	}
-	elseif($input === 'true' || $input ==='false'){
-		$input = (bool)$input;
+	elseif($input === 'true') {
+		$input = true;
+	}
+	elseif ($input ==='false'){
+		$input = false;
 	}
 	elseif (is_numeric($input)){
 		$input = +$input;

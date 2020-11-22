@@ -6,7 +6,7 @@ echo "Для завершения программы нажмите 2 раза E
 $result=0;
 
 do{
-	$input = readFromConsole("Введите число");
+	$input = readFromConsole("Введите число:");
 	if(is_numeric($input)) $result+=$input;
 }while(is_numeric($input));
 
